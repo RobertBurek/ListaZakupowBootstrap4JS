@@ -1,0 +1,67 @@
+/* html, body {
+	height: 100%;
+} */
+
+body {
+	flex-direction: column;
+	/* background: url('../img/background.jpg') no-repeat; */
+	/* background: url('../img/background1.png') no-repeat; */
+	background: url('../img/background2.jpg') no-repeat;
+	background-size: cover;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+header{
+	display: flex;
+	flex-direction: column;
+	max-width: 600px;
+	width: 100%;
+	padding: 10px 30px;
+	margin: 10px;
+	background: rgba(255, 255, 255, 0.2);
+	box-shadow: 0 0 50px rgba(0,0,0,0.5);
+}
+
+.group-section{
+margin-top: 20px;
+}
+
+/* App container*/
+.app-container {
+	max-width: 450px;
+	width: 100%;
+	padding: 25px;
+	margin: 10px;
+	
+	background: rgba(255, 255, 255, 0.2);
+	box-shadow: 0 0 50px rgba(0,0,0,0.5);
+}
+
+.app-container h3 {
+	font-size: 32px;
+	margin: 10px auto;
+}
+
+/* New product */
+.new-product-container {
+	margin-bottom: 20px;
+}
+
+/* Products list */
+.products-container ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+.single-product {
+	margin-bottom: 20px;
+}
+
+.value{
+	width: 120px;
+	margin-top: 3px;
+}

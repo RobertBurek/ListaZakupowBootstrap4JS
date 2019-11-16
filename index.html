@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+	<meta charset="UTF-8">
+	<title>Zakupy</title>
+	
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/style.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+<header>
+		<h2 class="text-center">Lista zakupów</h2>
+		<div class="group-section">
+
+   			<section class="new-product-container" style="	float: right;">
+   				<form>
+   					<div class="input-group">
+   						<input type="text" class="form-control" placeholder="Nazwa produktu...">
+					
+   						<span class="input-group-btn">
+   							<button class="btn btn-primary" type="submit">Dodaj produkt</button>
+   						</span>
+   					</div>
+				   </form>
+			</section>
+			<section class="family-container">
+					<div class="dropdown">
+					  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Rodzinka
+					  <span class="caret"></span></button>
+					  <ul class="dropdown-menu">
+						<li><a href="#">Kasia</a></li>
+						<li><a href="#">Robert</a></li>
+						<li><a href="#">Wiktoria</a></li>
+						<li><a href="#">Izabela</a></li>
+					  </ul>
+					</div>
+			</section>
+		</div>
+</header>
+
+		<main class="app-container">
+
+
+   	
+   	<section class="products-container">
+   		<ul>
+   			<li class="single-product">
+					<div class="input-group">
+						<span class="input-group-btn">
+							<button class="btn btn-default toggle-complete-btn"><i class="fa fa-check"></i></button>
+						</span>
+					
+						<input type="text" class="form-control" placeholder="Nazwa produktu..." value="Lody sandwich">
+
+						<span class="input-group-btn">
+							<button class="btn btn-danger delete-product-btn"><i class="fa fa-times"></i></button>
+						</span>
+					</div>
+					<div class="input-group value">
+							<span class="input-group-btn">
+								<button class="btn btn-success plus-product-btn"><i class="fa fa-plus-square"></i></button>
+							</span>
+						
+							<input type="text" class="form-control" placeholder="0" value="0">
+	
+							<span class="input-group-btn">
+								<button class="btn btn-danger minus-product-btn"><i class="fa fa-minus-square"></i></button>
+							</span>
+					</div>
+   			</li>
+			   <li class="single-product">
+					<div class="input-group">
+						<span class="input-group-btn">
+							<button class="btn btn-default toggle-complete-btn"><i class="fa fa-check"></i></button>
+						</span>
+					
+						<input type="text" class="form-control" placeholder="Nazwa produktu..." value="Lody sandwich">
+
+						<span class="input-group-btn">
+							<button class="btn btn-danger delete-product-btn"><i class="fa fa-times"></i></button>
+						</span>
+					</div>
+					<div class="input-group value">
+							<span class="input-group-btn">
+								<button class="btn btn-success plus-product-btn"><i class="fa fa-plus-square"></i></button>
+							</span>
+						
+							<input type="text" class="form-control" placeholder="0" value="0">
+	
+							<span class="input-group-btn">
+								<button class="btn btn-danger minus-product-btn"><i class="fa fa-minus-square"></i></button>
+							</span>
+					</div>
+			   </li>
+			   <li class="single-product">
+					<div class="input-group">
+						<span class="input-group-btn">
+							<button class="btn btn-default toggle-complete-btn"><i class="fa fa-check"></i></button>
+						</span>
+					
+						<input type="text" class="form-control" placeholder="Nazwa produktu..." value="Lody sandwich">
+
+						<span class="input-group-btn">
+							<button class="btn btn-danger delete-product-btn"><i class="fa fa-times"></i></button>
+						</span>
+					</div>
+					<div class="input-group value">
+							<span class="input-group-btn">
+								<button class="btn btn-success plus-product-btn"><i class="fa fa-plus-square"></i></button>
+							</span>
+						
+							<input type="text" class="form-control" placeholder="0" value="0">
+	
+							<span class="input-group-btn">
+								<button class="btn btn-danger minus-product-btn"><i class="fa fa-minus-square"></i></button>
+							</span>
+					</div>
+   			</li>   
+   		</ul>
+   	</section>
+   </main>
+    
+	<script src="js/scripts.js"></script>
+</body>
+</html>
