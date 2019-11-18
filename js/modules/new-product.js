@@ -22,10 +22,20 @@ function addNewProduct(product, number){
         selectedProduct(this);
     });
 
+    var productsList = document.createElement('input');
+    productsList.setAttribute("name","linia10");
+    productsList.setAttribute("type","hidden");
+    productsList.setAttribute("value",product);
+    console.log(productsList);
+
     // Add product to DOM
     productsContainer.prepend(product_Li);
     // productsContainer.insertBefore(product_Li,productsContainer_Li);
 };
+
+function prepareProductsListHTML(product, number){
+    return ' ';
+}
 
 function prepareProductHTML(product, number){
     return  '<div class="input-group">' +
