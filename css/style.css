@@ -18,7 +18,7 @@ body {
 header{
 	display: flex;
 	flex-direction: column;
-	max-width: 600px;
+	max-width: 700px;
 	width: 100%;
 	padding: 10px 30px;
 	margin: 10px;
@@ -27,14 +27,17 @@ header{
 }
 
 .group-section{
-margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	margin-top: 20px;
+	justify-content: space-between;
 }
 
 /* App container*/
 .app-container {
 	max-width: 450px;
 	width: 100%;
-	padding: 25px;
+	padding: 25px 25px 0 25px;
 	margin: 10px;
 	
 	background: rgba(255, 255, 255, 0.2);

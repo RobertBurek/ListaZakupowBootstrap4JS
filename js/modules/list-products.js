@@ -1,9 +1,9 @@
+// Show product
 function showProducts() {
-    products.forEach((product)=>{
-        console.log(product);
+    products.forEach((product,number)=>{
+        // console.log(product,number);
 
-        addNewProduct(product);
+        addNewProduct(product,number);
         
     });
-
 }
