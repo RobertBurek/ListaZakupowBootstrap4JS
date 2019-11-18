@@ -8,6 +8,20 @@ function addNewProduct(product, number){
     // console.log();
     product_Li.innerHTML=prepareProductHTML(product, number);
 
+    // Event - select product
+    var selectProductBtn = product_Li.querySelector('.select-product-btn');
+
+    selectProductBtn.addEventListener('click', function(){
+        console.log(products[this.value],this.value);
+        if (products[this.value][2]=="") 
+            products[this.value]=[products[this.value][0],products[this.value][1],"btn-success",products[this.value][3]];
+        else
+            products[this.value]=[products[this.value][0],products[this.value][1],"",products[this.value][3]];
+        console.log(products[this.value]);
+        console.log(products);
+        selectedProduct(this);
+    });
+
     // Add product to DOM
     productsContainer.prepend(product_Li);
     // productsContainer.insertBefore(product_Li,productsContainer_Li);

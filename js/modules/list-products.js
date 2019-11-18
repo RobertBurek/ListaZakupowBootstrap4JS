@@ -7,3 +7,9 @@ function showProducts() {
         
     });
 }
+
+// Select product
+function selectedProduct(product){
+    product.classList.toggle('btn-success');
+}
+
