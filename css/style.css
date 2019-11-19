@@ -67,20 +67,25 @@ header{
 	margin-bottom: 20px;
 }
 
-.value{
+/* .value{
+	width: 120px;
+	margin-top: 3px;
+} */
+
+[class*="posicion"]{
 	width: 120px;
 	margin-top: 3px;
 }
 
 /* zajętość zapisu */
 .elem-is-busy {
-    position: relative;
+    /* position: relative; */
     pointer-events: none;
     opacity:0.5;
 }
 
 .elem-is-busy::after {
-    position: absolute;
+    /* position: absolute; */
     left: 50%;
     top: 50%;
     width: 20px;

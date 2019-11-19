@@ -10,3 +10,4 @@ function selectedProduct(product){
     product.classList.toggle('btn-success');
 }
 
+console.log(products);
