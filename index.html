@@ -3,6 +3,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Zakupy</title>
+	<link rel="shortcut icon" href="#" />
 	
 	<link rel="stylesheet" href="css/bootstrap.min.css">
 
@@ -44,18 +45,12 @@
 						</div>
 				 </form>
 			 </section>
-			<section class="new-product-container">
+			<section class="save-new-product-container">
 					<form action="zapisz.php" method="POST" >
-						<div class="input-group">
-							<input type="hidden" name="liniaLenght" value="4">
-							<input type="hidden" name="linia0" value="['Lody sandwich',5,'btn-success','Wiktorii']">
-							<input type="hidden" name="linia1" value="['Mąka tortowa',0,'','Kasi']">
-							<input type="hidden" name="linia2" value="['Coca-Cola',0,'','Roberta']">
-							<input type="hidden" name="linia3" value="['Chipsy paprykowe',3,'btn-success','Wiktorii']">
+							<!-- <input type="hidden" name="linia0" value="['Lody sandwich',5,'btn-success','Wiktorii']"> -->
 					  		<span class="group">
-							   <button class="btn btn-danger" type="submit">Zapisz !</button>
+							   <button class="btn btn-danger" type="submit" id="loadingZapis">Zapisz !</button>
 					  		</span>
-						</div>
 				 	</form>
 			 </section>
 		</div>
