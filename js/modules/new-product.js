@@ -11,17 +11,11 @@ function addNewProduct(product, number){
 
 
     selectProductBtn.addEventListener('click', function(){
-        // console.log(this);
-        // console.log(products[this.value],this.value);
         if (products[this.value][2]=="") 
             products[this.value][2]="btn-success";
         else
             products[this.value][2]="";
-        // console.log(products[this.value]);
-        // console.log(products);
-        // selectedProduct(this);
         this.classList.toggle('btn-success');
-        // productsList.innerHTML=prepareProductsListHTML();
     });
 
     // Event - delete product
@@ -47,8 +41,10 @@ function addNewProduct(product, number){
         var valueThis = document.querySelector('#add'+number);
         var state=parseInt(valueThis.getAttribute('value'));
         if (valueThis.value==1) {
+            if (products[this.value][2]=="btn-success"){
             products[this.value][2]="";
             selectProductBtn.classList.toggle('btn-success');
+            };
         };
         if (state > 0) valueThis.setAttribute('value',state-1);
         products[this.value][1]=valueThis.value;
@@ -70,7 +66,7 @@ function prepareProductHTML(product, number){
 			'		<button class="btn btn-danger delete-product-btn" value="' + number + '"><i class="fa fa-times"></i></button>' +
 			'	</span>' +
 			'</div>' +
-			'<div class="input-group posicion' + number + '">' +
+			'<div class="input-group input-group-sm posicion' + number + '">' +
 			'	<span class="input-group-btn">' +
 			'		<button class="btn  plus-product-btn" value="' + number + '"><i class="fa fa-plus-square"></i></button>' +
 			'	</span>' +
