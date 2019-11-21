@@ -1,53 +1,65 @@
-function addNewProduct(product, number){
+function addNewProduct(product, index){
     var product_Li = document.createElement('li');
 
     product_Li.classList.add('single-product');
-    product_Li.classList.add('product'+number);
+    product_Li.classList.add('product'+index);
 
-    product_Li.innerHTML=prepareProductHTML(product, number);
+    product_Li.innerHTML=prepareProductHTML(product, index);
 
     // Event - select product
     var selectProductBtn = product_Li.querySelector('.select-product-btn');
 
 
     selectProductBtn.addEventListener('click', function(){
-        if (products[this.value][2]=="") 
-            products[this.value][2]="btn-success";
+        if (products[index][2]=="") 
+            products[index][2]="btn-success";
         else
-            products[this.value][2]="";
+            products[index][2]="";
         this.classList.toggle('btn-success');
+        // console.log(products[index][1]);
+        // console.log(this.value,index);
+        if (products[index][1]==0) additionButton();
     });
 
     // Event - delete product
 
     // Event - addition
     var additionBtn = product_Li.querySelector('.plus-product-btn');
+
+
     additionBtn.addEventListener('click', function(){
-        var valueThis = document.querySelector('#add'+number);
+        additionButton();
+    });
+
+    function additionButton(){
+        var valueThis = document.querySelector('#add'+index);
         var state=parseInt(valueThis.getAttribute('value'));
         if (state < 99) valueThis.setAttribute('value',state+1);
-        products[this.value][1]=valueThis.value;
-        if (products[this.value][2]=="") {
-        products[this.value][2]="btn-success";
+        // console.log(this.value,index);
+        products[index][1]=valueThis.value;
+        if (products[index][2]=="") {
+        products[index][2]="btn-success";
         selectProductBtn.classList.toggle('btn-success');
         };
         saveList();
-    });
+    };
+
+
 
 
     // Event - reduction
     var reductionBtn = product_Li.querySelector('.minus-product-btn');
     reductionBtn.addEventListener('click', function(){
-        var valueThis = document.querySelector('#add'+number);
+        var valueThis = document.querySelector('#add'+index);
         var state=parseInt(valueThis.getAttribute('value'));
         if (valueThis.value==1) {
-            if (products[this.value][2]=="btn-success"){
-            products[this.value][2]="";
+            if (products[index][2]=="btn-success"){
+            products[index][2]="";
             selectProductBtn.classList.toggle('btn-success');
             };
         };
         if (state > 0) valueThis.setAttribute('value',state-1);
-        products[this.value][1]=valueThis.value;
+        products[index][1]=valueThis.value;
         saveList();
     });
 
@@ -56,23 +68,23 @@ function addNewProduct(product, number){
 };
 
 
-function prepareProductHTML(product, number){
+function prepareProductHTML(product, index){
     return  '<div class="input-group">' +
 		 	'	<span class="input-group-btn">' +
-			'		<button class="btn btn-default select-product-btn '+ product[2] +'" value="' + number + '"><i class="fa fa-check"></i></button>' +
+			'		<button class="btn btn-default select-product-btn '+ product[2] +'" value="' + index + '"><i class="fa fa-check"></i></button>' +
 			'	</span>' +
 			'	<input type="text" class="form-control" placeholder="Nazwa produktu..." value="' + product[0] + '" disabled>' +
 			'	<span class="input-group-btn">' +
-			'		<button class="btn btn-danger delete-product-btn" value="' + number + '"><i class="fa fa-times"></i></button>' +
+			'		<button class="btn btn-danger delete-product-btn" value="' + index + '"><i class="fa fa-times"></i></button>' +
 			'	</span>' +
 			'</div>' +
-			'<div class="input-group input-group-sm posicion' + number + '">' +
+			'<div class="input-group input-group-sm posicion' + index + '">' +
 			'	<span class="input-group-btn">' +
-			'		<button class="btn  plus-product-btn" value="' + number + '"><i class="fa fa-plus-square"></i></button>' +
+			'		<button class="btn  plus-product-btn" value="' + index + '"><i class="fa fa-plus-square"></i></button>' +
 			'	</span>' +
-			'	<input type="text" class="form-control" id="add' + number + '" placeholder="0" value="' + product[1] + '" disabled>' +
+			'	<input type="text" class="form-control" id="add' + index + '" placeholder="0" value="' + product[1] + '" disabled>' +
 			'	<span class="input-group-btn">' +
-			'		<button class="btn  minus-product-btn" value="' + number + '"><i class="fa fa-minus-square"></i></button>' +
+			'		<button class="btn  minus-product-btn" value="' + index + '"><i class="fa fa-minus-square"></i></button>' +
 			'	</span>' +
             '</div>';
 }
@@ -109,10 +121,10 @@ function saveList(){
     inputFromListProducts.setAttribute("name","liniaLengh");
     inputFromListProducts.setAttribute("value",products.length);
     saveListProductsForm.appendChild(inputFromListProducts);
-    products.forEach((product,number)=>{
+    products.forEach((product,index)=>{
         var nameProductsList = document.createElement('input');
         nameProductsList.setAttribute("type","hidden");
-        nameProductsList.setAttribute("name","linia"+number);
+        nameProductsList.setAttribute("name","linia"+index);
         // console.log(product);
         nameProductsList.setAttribute("value","['"+product[0]+"',"+product[1]+",'"+product[2]+"','"+product[3]+"']");
         // console.log(nameProductsList);
