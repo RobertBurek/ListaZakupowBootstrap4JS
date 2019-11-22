@@ -6,8 +6,8 @@ function showProducts() {
 }
 
 // Select product
-function selectedProduct(product){
-    product.classList.toggle('btn-success');
-}
+// function selectedProduct(product){
+//     product.classList.toggle('btn-success');
+// }
 
 console.log(products);

@@ -16,4 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     saveListProducts();
 
+    showCategories();
+
+    
+
 });

@@ -6,6 +6,13 @@ function addNewProduct(product, index){
 
     product_Li.innerHTML=prepareProductHTML(product, index);
 
+    // console.log(document.querySelector('#warzywa'));
+
+    // var linkA1 = document.querySelector('#warzywa');
+    // linkA1.addEventListener('click', function(event){
+    //     console.log(event);
+    // });
+
     // Event - select product
     var selectProductBtn = product_Li.querySelector('.select-product-btn');
 
