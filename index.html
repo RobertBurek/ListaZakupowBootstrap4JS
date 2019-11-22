@@ -18,20 +18,44 @@
 
 </head>
 <body>
+	<script>
+		function getURLParam(strParamName){
+  			var strReturn = "";
+  			var strHref = window.location.href;
+  			if ( strHref.indexOf("?") > -1 ){
+  			  var strQueryString = strHref.substr(strHref.indexOf("?")).toLowerCase();
+  			  var aQueryString = strQueryString.split("&");
+  			  for ( var iParam = 0; iParam < aQueryString.length; iParam++ ){
+  			    if (
+					aQueryString[iParam].indexOf(strParamName + "=") > -1 ){
+  			      var aParam = aQueryString[iParam].split("=");
+  			      strReturn = aParam[1];
+  			      break;
+  			    }
+  			  }
+  			}
+  		return strReturn;
+		};
+  console.log(getURLParam("kat"));
+</script>
+
 <header>
 		<h2 class="text-center">Lista zakupów</h2>
 		<div class="group-section">
 			<section class="family-container">
 					<div class="dropdown">
-					  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Produkty
+					  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Kategorie
 					  <span class="caret"></span></button>
 					  <ul class="dropdown-menu">
-						<li><a href="#">Kasi</a></li>
-						<li><a href="#">Roberta</a></li>
-						<li><a href="#">Wiktorii</a></li>
-						<li><a href="#">Izabeli</a></li>
-						<li><a href="#">Pawła</a></li>
-						<li><a href="#">Wszystkie</a></li>
+						<li><a href="#/?kat=Art.mączne">Art. mączne</a></li>
+						<li><a href="#/?kat=Art.mleczne">Art. mleczne</a></li>
+						<li><a href="#/?kat=Napoje">Napoje</a></li>
+						<li><a href="#/?kat=Słodycze">Słodycze</a></li>
+						<li><a href="#/?kat=Przekąski">Przekąski</a></li>
+						<li><a href="#/?kat=Warzywa">Warzywa</a></li>
+						<li><a href="#/?kat=Wędliny">Wędliny</a></li>
+						<li><a href="#/?kat=Wszystkie">Wszystkie</a></li>
+						<li><a href="#/?kat=Dodajkategorię">Dodaj kategorię</a></li>
 					  </ul>
 					</div>
 			</section>
