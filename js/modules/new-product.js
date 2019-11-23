@@ -2,7 +2,7 @@ function addNewProduct(product, index){
     var product_Li = document.createElement('li');
 
     product_Li.classList.add('single-product');
-    product_Li.classList.add('product'+index);
+    // product_Li.classList.add('product'+index);
 
     product_Li.innerHTML=prepareProductHTML(product, index);
 
@@ -29,6 +29,14 @@ function addNewProduct(product, index){
     });
 
     // Event - delete product
+    var deleteProductBtn = product_Li.querySelector('.delete-product-btn');
+    deleteProductBtn.addEventListener('click',function(){
+        var liToDelete = this.closest('li');
+        // console.log(liToDelete);
+        liToDelete.classList.toggle('hidden');
+        products[index][0]="";products[index][1]="";products[index][2]="";products[index][3]="";
+        // saveList();
+    })
 
     // Event - addition
     var additionBtn = product_Li.querySelector('.plus-product-btn');
@@ -48,11 +56,8 @@ function addNewProduct(product, index){
         products[index][2]="btn-success";
         selectProductBtn.classList.toggle('btn-success');
         };
-        saveList();
+        // saveList();
     };
-
-
-
 
     // Event - reduction
     var reductionBtn = product_Li.querySelector('.minus-product-btn');
@@ -67,7 +72,7 @@ function addNewProduct(product, index){
         };
         if (state > 0) valueThis.setAttribute('value',state-1);
         products[index][1]=valueThis.value;
-        saveList();
+        // saveList();
     });
 
     // Add product to DOM
@@ -135,6 +140,7 @@ function saveList(){
         // console.log(product);
         nameProductsList.setAttribute("value","['"+product[0]+"',"+product[1]+",'"+product[2]+"','"+product[3]+"']");
         // console.log(nameProductsList);
-        saveListProductsForm.appendChild(nameProductsList);
+        if (product[0].length>0) saveListProductsForm.appendChild(nameProductsList);
     });
+    // console.log(saveListProductsForm);
 }

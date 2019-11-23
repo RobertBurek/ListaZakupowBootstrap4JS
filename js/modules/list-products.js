@@ -10,4 +10,9 @@ function showProducts() {
 //     product.classList.toggle('btn-success');
 // }
 
+// Delete product
+function deletedProduct(product){
+    product.classList.toggle('btn-success');
+}
+
 console.log(products);
