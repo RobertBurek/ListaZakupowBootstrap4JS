@@ -64,11 +64,13 @@ function addNewProduct(product, index){
     reductionBtn.addEventListener('click', function(){
         var valueThis = document.querySelector('#add'+index);
         var state=parseInt(valueThis.getAttribute('value'));
-        if (valueThis.value==1) {
-            if (products[index][2]=="btn-success"){
+        if ((valueThis.value==1)&&(products[index][2]=="btn-success")){
             products[index][2]="";
             selectProductBtn.classList.toggle('btn-success');
-            };
+        };
+        if ((valueThis.value>1)&&(products[index][2]=="")){
+            products[index][2]="btn-success";
+            selectProductBtn.classList.toggle('btn-success');
         };
         if (state > 0) valueThis.setAttribute('value',state-1);
         products[index][1]=valueThis.value;
