@@ -26,16 +26,18 @@ header{
 	margin: 10px;
 	background-color: rgba(255, 255, 255, 0.7);
 	box-shadow: 0 0 50px rgba(0,0,0,0.5);
-	height: 343px;
+	height: 305px;
 }
 
 .group-section{
 	display: flex;
-	flex-direction: row;
-	margin-top: 20px;
-	justify-content: space-between;
-	margin-left: 60px;
+    flex-direction: row;
+    margin-top: 20px;
+    /* margin-bottom: 20px; */
+    justify-content: space-between;
+    margin-left: 60px;
     margin-right: 60px;
+	/* margin: 20px 60px; */
 }
 
 .option{
@@ -46,31 +48,35 @@ header{
 }
 
 .setting{
-	display: flex;
+    display: flex;
     flex-direction: column;
-    width: 300px;
-    height: 75px;
-    margin-left: 200px;
+    width: 280px;
+    height: 0px;
+    margin: 0 auto;
+    margin-top: 22px;
 }
 
 .up{
     position: relative;
-    bottom: -75px;
+    bottom: -124px;
     /* display: none; */
 }
 
 .down{
-	/* display: none; */
-	}
+	display: none;
+	height: 22px;
+}
 
-.option p {
-	width: 270px;
-	font-size: 10px;
+.setting p {
+	margin: 0;
+    font-size: 10px;
+    color: brown;
 }
 
 .form-control-xs{
 	width: 185px;
 }
+
 /* App container*/
 .app-container {
 	max-width: 450px;
@@ -89,7 +95,8 @@ header{
 
 /* New product */
 .new-product-container {
-	margin-bottom: 20px;
+	margin-bottom: 8px;
+    margin-top: 15px;
 }
 
 /* Products list */
