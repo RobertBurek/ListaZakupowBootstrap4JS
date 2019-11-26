@@ -19,12 +19,13 @@
 </head>
 <body>
 <header>
-		<h2 class="text-center">Lista zakupów</h2>
+		<h2 class="text-center">Lista zakupów, kategoria : Wszystkie</h2>
 		<div class="group-section">
 			<section class="family-container">
 					<div class="dropdown">
 					  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Kategorie
-					  <span class="caret"></span></button>
+					  <span class="caret"></span>
+					</button>
 					  <ul class="dropdown-menu">
 						<li><a href="#/?kat=Art._mączne">Art. mączne</a></li>
 						<li><a href="#/?kat=Art._mleczne">Art. mleczne</a></li>
@@ -34,11 +35,10 @@
 						<li><a href="#" id="warzywa">Warzywa</a></li>
 						<li><a href="#/?kat=Wędliny">Wędliny</a></li>
 						<li><a href="#/?kat=Wszystkie">Wszystkie</a></li>
-						<li><a href="#/?kat=Dodajkategorię">Dodaj kategorię</a></li>
 					  </ul>
 					</div>
 			</section>
-			<section class="save-new-product-container">
+			<section class="make-new-product-container">
 					<form action="zapisz.php" method="POST" >
 							<!-- <input type="hidden" name="linia0" value="['Lody sandwich',5,'btn-success','Wiktorii']"> -->
 					  		<span class="group">
@@ -56,50 +56,50 @@
 				 	</form>
 			 </section>
 		</div>
-		<div>
+		<div class="input-group">
 			<div class="option down">
-			<span class="group">
-				<button class="btn btn-xs" type="submit" id="" hidden><i class="fa fa-angle-double-down"></i></button>
-			</span>
-			<span class="group">
-				<button class="btn btn-xs" type="submit" id=""><i class="fa fa-angle-double-down"></i></button>
-			</span>
+				<span class="group">
+					<button class="btn btn-xs" type="submit" id=""><i class="fa fa-angle-double-down"></i></button>
+				</span>
+				<span class="group">
+					<button class="btn btn-xs" type="submit" id=""><i class="fa fa-angle-double-down"></i></button>
+				</span>
 			</div>
-			<div class="setting">
-			<section class="new-product-container">
-					<form>
-						<div class="input-group">
-							<input class="form-control-xs" type="text" placeholder="Nazwa kategorii . . .">
-					 
-							<span class="input-group-btn">
-								<button class="btn-xs btn-primary" type="submit">Dodaj kategorię</button>
-							</span>
-						</div>
-				 </form>
-			</section>
-			<section class="new-product-container">
-					<form>
-						<div class="input-group">
-							<input class="form-control-xs" type="text" placeholder="Nazwa produktu . . .">
-					 
-							<span class="input-group-btn">
-								<button class="btn-xs btn-primary" type="submit">Dodaj produkt</button>
-							</span>
-						</div>
-				 </form>
-			 </section>
-			 <p>
-				 Jeżeli chcesz aby produkt należał do jakiejś kategorii, 
-				 to najpierw wybierz daną kategorię z listy a następnie dodaj produkt. 
-			 </p>
+			<div class="setting input-group">
+				<section class="new-product-container" id="addCategory">
+						<form>
+							<div class="input-group">
+								<input class="form-control-xs" type="text" placeholder="Nazwa kategorii . . .">
+							
+								<span class="input-group-btn">
+									<button class="btn-xs btn-primary" type="submit">Dodaj kategorię</button>
+								</span>
+							</div>
+					 </form>
+				</section>
+				<section class="new-product-container" id="addProduct">
+						<form>
+							<div class="input-group">
+								<input class="form-control-xs" type="text" placeholder="Nazwa produktu . . .">
+							
+								<span class="input-group-btn">
+									<button class="btn-xs btn-primary" type="submit">Dodaj produkt</button>
+								</span>
+							</div>
+					 </form>
+				</section>
+				<p>
+					 Jeżeli chcesz aby produkt należał do jakiejś kategorii, 
+					 to najpierw wybierz z listy daną kategorię a następnie dodaj produkt. 
+				</p>
 			</div>
 			<div class="option up">
-			<span class="group">
-				<button class="btn btn-xs" type="submit" id=""><i class="fa fa-angle-double-up"></i></button>
-			</span>
-			<span class="group">
-				<button class="btn btn-xs" type="submit" id=""><i class="fa fa-angle-double-up"></i></button>
-			</span>
+				<span class="group">
+					<button class="btn btn-xs" type="submit" id=""><i class="fa fa-angle-double-up"></i></button>
+				</span>
+				<span class="group">
+					<button class="btn btn-xs" type="submit" id=""><i class="fa fa-angle-double-up"></i></button>
+				</span>
 			</div>
 		</div>
 </header>
