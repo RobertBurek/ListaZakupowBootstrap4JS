@@ -2,6 +2,7 @@ function addNewProduct(product, index){
     var product_Li = document.createElement('li');
 
     product_Li.classList.add('single-product');
+    if (product[0]=="") product_Li.classList.add('hidden');
 
     product_Li.innerHTML=prepareProductHTML(product, index);
 
@@ -26,8 +27,18 @@ function addNewProduct(product, index){
         var liToDelete = this.closest('li');
         // console.log(liToDelete);
         liToDelete.classList.toggle('hidden');
-        products[index][0]="";products[index][1]="";products[index][2]="";products[index][3]="";
+        products[index][0]="";products[index][1]="";products[index][2]="";
         // saveList();
+    })
+
+    // Event - delete product , right click.
+    deleteProductBtn.addEventListener('contextmenu',function(){
+        var liToDelete = this.closest('li');
+        // console.log(liToDelete);
+        liToDelete.classList.toggle('hidden');
+        products[index][3]=categoryName;
+        // saveList();
+        console.log(deleteProductBtn);
     })
 
     // Event - addition
@@ -71,6 +82,10 @@ function addNewProduct(product, index){
 
     // Add product to DOM
     productsContainer.prepend(product_Li);
+    // if (product[index][0]==""){
+    //     var liToDelete = this.closest('li');
+    //     liToDelete.classList.toggle('hidden');
+    // }
 };
 
 
@@ -84,7 +99,7 @@ function prepareProductHTML(product, index){
 			'		<button class="btn btn-danger delete-product-btn" value="' + index + '"><i class="fa fa-times"></i></button>' +
 			'	</span>' +
 			'</div>' +
-			'<div class="input-group input-group-sm posicion' + index + '">' +
+			'<div class="input-group input-group-sm position' + index + '">' +
 			'	<span class="input-group-btn">' +
 			'		<button class="btn  plus-product-btn" value="' + index + '"><i class="fa fa-plus-square"></i></button>' +
 			'	</span>' +
@@ -100,13 +115,15 @@ function addProductToList(){
     newProductForm.addEventListener('submit',function(event){
         event.preventDefault();
         var nameProduct = this.querySelector('input').value;
+        // console.log(nameProduct);
         if (nameProduct){
-            var newProduct = [nameProduct, 1, 'btn-success', 'Kasi'];
-            console.log(newProduct);
+            var newProduct = [nameProduct, 1, 'btn-success', categoryName];
+            // console.log(newProduct);
             // products.unshift(newProduct);
             products.push(newProduct);
-            console.log(products);
+            // console.log(products);
             addNewProduct(newProduct,products.length-1);
+            this.querySelector('input').value="";
         };
     });
 }

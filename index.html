@@ -11,6 +11,7 @@
 	<link rel="stylesheet" href="css/style.css">
 
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="js/modules/startParams.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 	<meta http-equiv="pragma" content="no-cache">
@@ -27,20 +28,22 @@
 					  <span class="caret"></span>
 					</button>
 					  <ul class="dropdown-menu">
-						<li><a href="#/?kat=Art._mączne">Art. mączne</a></li>
+						<!-- <li><a href="#">Art. mączne</a></li>
 						<li><a href="#/?kat=Art._mleczne">Art. mleczne</a></li>
 						<li><a href="#" id="napoje">Napoje</a></li>
+						<div class="dropdown-divider"></div>
 						<li><a href="#/?kat=Słodycze">Słodycze</a></li>
 						<li><a href="#/?kat=Przekąski">Przekąski</a></li>
 						<li><a href="#" id="warzywa">Warzywa</a></li>
 						<li><a href="#/?kat=Wędliny">Wędliny</a></li>
-						<li><a href="#/?kat=Wszystkie">Wszystkie</a></li>
+						<li><a href="#/?kat=Wszystkie">Wszystkie</a></li> -->
 					  </ul>
+					  	<!-- <ul><li><a href="#" id="other">Pozostałe</a></li></ul> -->
 					</div>
 			</section>
 			<section class="make-new-product-container">
-					<form action="zapisz.php" method="POST" >
-							<!-- <input type="hidden" name="linia0" value="['Lody sandwich',5,'btn-success','Wiktorii']"> -->
+					<form action="makeListShopping.php" method="POST" >
+							<!-- <input type="hidden" name="linia0" value="['',5,'btn-success','Napoje']"> -->
 					  		<span class="group">
 							   <button class="btn btn-warning" type="submit" id="loadingZapis">Utwórz listę zakupów</button>
 					  		</span>
@@ -48,8 +51,8 @@
 			 </section>
 
 			<section class="save-new-product-container">
-					<form action="zapisz.php" method="POST" >
-							<!-- <input type="hidden" name="linia0" value="['Lody sandwich',5,'btn-success','Wiktorii']"> -->
+					<form action="saveApp.php" method="POST" >
+							<!-- <input type="hidden" name="linia0" value="[' ',5,'btn-success','Napoje']"> -->
 					  		<span class="group">
 							   <button class="btn btn-danger" type="submit" id="loadingZapis">Zapisz zmiany</button>
 					  		</span>
@@ -118,5 +121,6 @@
    <script src="js/modules/list-products.js"></script>
    <script src="js/modules/categories.js"></script>
    <script src="js/modules/new-categories.js"></script>
+   <script src="js/modules/list-categories.js"></script>
 </body>
 </html>

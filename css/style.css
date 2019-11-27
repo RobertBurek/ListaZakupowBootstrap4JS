@@ -113,7 +113,7 @@ header{
 	margin-top: 3px;
 } */
 
-[class*="posicion"]{
+[class*="position"]{
 	width: 100px;
 	margin-top: 3px;
 }
