@@ -55,6 +55,17 @@ header{
     margin-top: 22px;
 }
 
+.new-product-container button{
+	height: 27px;
+    width: 115px;
+    padding: 0px 6px;
+}
+
+.new-product-container input{
+	height: 27px;
+	padding: 0px 6px;
+}
+
 .up{
     position: relative;
     bottom: -124px;
@@ -71,9 +82,9 @@ header{
     color: brown;
 }
 
-.form-control-xs{
+/* .form-control-xs{
 	width: 190px;
-}
+} */
 
 /* App container*/
 .app-container {

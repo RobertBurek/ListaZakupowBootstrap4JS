@@ -32,19 +32,38 @@ function addNewProduct(product, index){
     })
 
     // Event - delete product , right click.
-    deleteProductBtn.addEventListener('contextmenu',function(){
-        var liToDelete = this.closest('li');
-        // console.log(liToDelete);
-        liToDelete.classList.toggle('hidden');
-        products[index][3]=categoryName;
-        // saveList();
-        console.log(deleteProductBtn);
-    })
+    // wykorzystywane do przypisania produktu do kategorii
+    //  gdy włączona jest linia 'ul' 'pozostałe' w index.html
+    // deleteProductBtn.addEventListener('contextmenu',function(){
+    //     var liToDelete = this.closest('li');
+    //     // console.log(liToDelete);
+    //     liToDelete.classList.toggle('hidden');
+    //     products[index][3]=categoryName;
+    //     // saveList();
+    //     console.log(deleteProductBtn);
+    // })
+
+    // Event - input right click.
+    var inputProductBtn = product_Li.querySelector('.myInput');
+    inputProductBtn.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+        var inputThis = document.querySelector('#name'+index);
+        if (inputThis.style.color=="red") {
+            inputThis.disabled = true;
+            inputThis.style.color="";
+            inputThis.style.fontWeight="";
+            product[0]=inputThis.value;
+        } else {
+            inputThis.disabled = false;
+            inputThis.style.color="red";
+            inputThis.style.fontWeight="bold";
+            inputThis.focus();
+        }
+        return false;
+    }, false);
 
     // Event - addition
     var additionBtn = product_Li.querySelector('.plus-product-btn');
-
-
     additionBtn.addEventListener('click', function(){
         additionButton();
     });
@@ -82,10 +101,6 @@ function addNewProduct(product, index){
 
     // Add product to DOM
     productsContainer.prepend(product_Li);
-    // if (product[index][0]==""){
-    //     var liToDelete = this.closest('li');
-    //     liToDelete.classList.toggle('hidden');
-    // }
 };
 
 
@@ -93,9 +108,11 @@ function prepareProductHTML(product, index){
     return  '<div class="input-group">' +
 		 	'	<span class="input-group-btn">' +
 			'		<button class="btn btn-default select-product-btn '+ product[2] +'" value="' + index + '"><i class="fa fa-check"></i></button>' +
-			'	</span>' +
-			'	<input type="text" class="form-control" placeholder="Nazwa produktu..." value="' + product[0] + '" disabled>' +
-			'	<span class="input-group-btn">' +
+            '	</span>' +
+            '   <span class="myInput">' +
+			'	<input type="text" class="form-control" id="name' + index + '" placeholder="Nazwa produktu..." value="' + product[0] + '" disabled>' +
+            '	</span>' +
+            '   <span class="input-group-btn">' +
 			'		<button class="btn btn-danger delete-product-btn" value="' + index + '"><i class="fa fa-times"></i></button>' +
 			'	</span>' +
 			'</div>' +
@@ -131,7 +148,7 @@ function addProductToList(){
 function saveListProducts(){
     saveListProductsForm.addEventListener('submit',function(event){
         // event.preventDefault();
-        var buttonFrom = document.querySelector('#loadingZapis');
+        var buttonFrom = document.querySelector('#saving');
         buttonFrom.classList.add('element-is-busy');
         buttonFrom.disabled = true;    
         saveList();

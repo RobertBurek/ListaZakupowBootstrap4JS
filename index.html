@@ -28,34 +28,30 @@
 					  <span class="caret"></span>
 					</button>
 					  <ul class="dropdown-menu">
-						<!-- <li><a href="#">Art. mączne</a></li>
-						<li><a href="#/?kat=Art._mleczne">Art. mleczne</a></li>
-						<li><a href="#" id="napoje">Napoje</a></li>
-						<div class="dropdown-divider"></div>
-						<li><a href="#/?kat=Słodycze">Słodycze</a></li>
-						<li><a href="#/?kat=Przekąski">Przekąski</a></li>
-						<li><a href="#" id="warzywa">Warzywa</a></li>
-						<li><a href="#/?kat=Wędliny">Wędliny</a></li>
-						<li><a href="#/?kat=Wszystkie">Wszystkie</a></li> -->
+						<!-- <li><a href="#">Art. mączne</a></li>   -->
+						<!-- przykładowa linia generowana przez js -->
 					  </ul>
+					    <!-- linia udostępnia możliwość wyświetlania produktów nie przywisanych do żadnej kategorii -->
 					  	<!-- <ul><li><a href="#" id="other">Pozostałe</a></li></ul> -->
 					</div>
 			</section>
 			<section class="make-new-product-container">
-					<form action="makeListShopping.php" method="POST" >
-							<!-- <input type="hidden" name="linia0" value="['',5,'btn-success','Napoje']"> -->
-					  		<span class="group">
-							   <button class="btn btn-warning" type="submit" id="loadingZapis">Utwórz listę zakupów</button>
-					  		</span>
+					<form>
+						<!-- <input type="hidden" name="linia0" value="['',5,'btn-success','Napoje']"> -->
+						<!-- przykładowa linia generowana przez js -->
+					  	<span class="group">
+						   <button class="btn btn-warning" type="submit" id="making">Utwórz listę zakupów</button>
+					  	</span>
 				 	</form>
 			 </section>
 
 			<section class="save-new-product-container">
 					<form action="saveApp.php" method="POST" >
-							<!-- <input type="hidden" name="linia0" value="[' ',5,'btn-success','Napoje']"> -->
-					  		<span class="group">
-							   <button class="btn btn-danger" type="submit" id="loadingZapis">Zapisz zmiany</button>
-					  		</span>
+						<!-- <input type="hidden" name="linia0" value="[' ',5,'btn-success','Napoje']"> -->
+						<!-- przykładowa linia generowana przez js -->
+					  	<span class="group">
+						   <button class="btn btn-danger" type="submit" id="saving">Zapisz zmiany</button>
+					  	</span>
 				 	</form>
 			 </section>
 		</div>
@@ -72,24 +68,24 @@
 				<section class="new-product-container" id="addCategory">
 						<form>
 							<div class="input-group">
-								<input class="form-control-xs" type="text" placeholder="Nazwa kategorii . . .">
+								<input class="form-control" type="text" placeholder="Nazwa kategorii . . .">
 							
 								<span class="input-group-btn">
-									<button class="btn-xs btn-primary" type="submit">Dodaj kategorię</button>
+									<button class="btn btn-primary" type="submit">Dodaj kategorię</button>
 								</span>
 							</div>
-					 </form>
+					 	</form>
 				</section>
 				<section class="new-product-container" id="addProduct">
 						<form>
 							<div class="input-group">
-								<input class="form-control-xs" type="text" placeholder="Nazwa produktu . . .">
+								<input class="form-control" type="text" placeholder="Nazwa produktu . . .">
 							
 								<span class="input-group-btn">
-									<button class="btn-xs btn-primary" type="submit">Dodaj produkt</button>
+									<button class="btn btn-primary" type="submit">Dodaj produkt</button>
 								</span>
 							</div>
-					 </form>
+					 	</form>
 				</section>
 				<p>
 					 Jeżeli chcesz aby produkt należał do jakiejś kategorii, 
@@ -110,7 +106,8 @@
 	<main class="app-container">
    		<section class="products-container">
    			<ul>
-   				<!-- <li class="single-product"></li> -->
+				<!-- <li class="single-product"></li> -->
+				<!-- przykładowa linia generowana przez js -->
    			</ul>
    		</section>
    </main>
@@ -119,6 +116,7 @@
    <script src="js/modules/products.js"></script>
    <script src="js/modules/new-product.js"></script>
    <script src="js/modules/list-products.js"></script>
+   <script src="js/modules/new-product-to-list.js"></script>   
    <script src="js/modules/categories.js"></script>
    <script src="js/modules/new-categories.js"></script>
    <script src="js/modules/list-categories.js"></script>

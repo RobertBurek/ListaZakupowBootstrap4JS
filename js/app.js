@@ -11,29 +11,29 @@ var settingStyle = document.querySelector('.setting');
 var h2 = document.querySelector('h2');
 
 
-
 document.addEventListener('DOMContentLoaded', function() {
 
     // Show products
     showProducts();
 
+    // Show categories
     showCategories();
-    console.log(categoriesContainer);
 
     addProductToList();
 
     saveListProducts();
 
+    // rozwijany header 
     upOptionList();
     downOptionList();
 
-    document.querySelector("#other").addEventListener("click",function(event){
-        event.preventDefault();
-        showProductsOther();
-    });
+    // Listener dla elementu 'pozostałe'
+    // document.querySelector("#other").addEventListener("click",function(event){
+    //     event.preventDefault();
+    //     showProductsOther();
+    // });
 
     h2.innerHTML='Lista zakupów, kategoria : ' + categoryName;
-    // console.log(option);
     if (optionView) {
         divDown.style.display="none";
         headerStyle.style.height="305px";
@@ -45,7 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
 function upOptionList(){
     [].forEach.call(upOptionAll, function(upOption) {
         upOption.addEventListener('click', function(event) { 
-        // alert(this.innerText + " Clicked!");
         divUp.style.display="none";
         headerStyle.style.height="160px";
         settingStyle.style.display="none";
@@ -57,7 +56,6 @@ function upOptionList(){
 function downOptionList(){
     [].forEach.call(downOptionAll, function(downOption) {
         downOption.addEventListener('click', function(event) { 
-        // alert(this.innerText + " Clicked!");
         divDown.style.display="none";
         headerStyle.style.height="305px";
         settingStyle.style.display="flex";
@@ -65,4 +63,3 @@ function downOptionList(){
       })
     })
 };
-
