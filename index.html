@@ -21,39 +21,41 @@
 <body>
 <header>
 		<h2 class="text-center">Lista zakupów, kategoria : Wszystkie</h2>
-		<div class="group-section">
-			<section class="family-container">
-					<div class="dropdown">
-					  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Kategorie
-					  <span class="caret"></span>
-					</button>
-					  <ul class="dropdown-menu">
-						<!-- <li><a href="#">Art. mączne</a></li>   -->
-						<!-- przykładowa linia generowana przez js -->
-					  </ul>
-					    <!-- linia udostępnia możliwość wyświetlania produktów nie przywisanych do żadnej kategorii -->
-					  	<!-- <ul><li><a href="#" id="other">Pozostałe</a></li></ul> -->
-					</div>
-			</section>
-			<section class="make-new-product-container">
-					<form>
-						<!-- <input type="hidden" name="linia0" value="['',5,'btn-success','Napoje']"> -->
-						<!-- przykładowa linia generowana przez js -->
-					  	<span class="group">
-						   <button class="btn btn-warning" type="submit" id="making">Utwórz listę zakupów</button>
-					  	</span>
-				 	</form>
-			 </section>
-
-			<section class="save-new-product-container">
-					<form action="saveApp.php" method="POST" >
-						<!-- <input type="hidden" name="linia0" value="[' ',5,'btn-success','Napoje']"> -->
-						<!-- przykładowa linia generowana przez js -->
-					  	<span class="group">
-						   <button class="btn btn-danger" type="submit" id="saving">Zapisz zmiany</button>
-					  	</span>
-				 	</form>
-			 </section>
+		<div class="myNav">
+			<div class="group-section">
+				<section class="family-container">
+						<div class="dropdown">
+						  <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Kategorie
+						  <span class="caret"></span>
+						</button>
+						  <ul class="dropdown-menu">
+							<!-- <li><a href="#">Art. mączne</a></li>   -->
+							<!-- przykładowa linia generowana przez js -->
+						  </ul>
+						    <!-- linia udostępnia możliwość wyświetlania produktów nie przywisanych do żadnej kategorii -->
+						  	<!-- <ul><li><a href="#" id="other">Pozostałe</a></li></ul> -->
+						</div>
+				</section>
+				<section class="make-new-product-container">
+						<form>
+							<!-- <input type="hidden" name="linia0" value="['',5,'btn-success','Napoje']"> -->
+							<!-- przykładowa linia generowana przez js -->
+						  	<span class="group">
+							   <button class="btn btn-warning" type="submit" id="making">Utwórz listę zakupów</button>
+						  	</span>
+					 	</form>
+				 </section>
+			 
+				<section class="save-new-product-container">
+						<form action="saveApp.php" method="POST" >
+							<!-- <input type="hidden" name="linia0" value="[' ',5,'btn-success','Napoje']"> -->
+							<!-- przykładowa linia generowana przez js -->
+						  	<span class="group">
+							   <button class="btn btn-danger" type="submit" id="saving">Zapisz zmiany</button>
+						  	</span>
+					 	</form>
+				 </section>
+			</div>
 		</div>
 		<div class="input-group">
 			<div class="option down">
@@ -120,5 +122,23 @@
    <script src="js/modules/categories.js"></script>
    <script src="js/modules/new-categories.js"></script>
    <script src="js/modules/list-categories.js"></script>
+
+	<script>
+		$(document).ready(function() {
+			var NavY = $('.myNav').offset().top;
+			var stickyNav = function(){
+				var ScrollY = $(window).scrollTop();	  
+				if (ScrollY > NavY) { 
+					$('.myNav').addClass('sticky');
+				} else {
+					$('.myNav').removeClass('sticky'); 
+				}
+			};
+			stickyNav();
+			$(window).scroll(function() {
+				stickyNav();
+			});
+		});
+	</script>
 </body>
 </html>

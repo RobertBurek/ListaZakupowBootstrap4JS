@@ -161,7 +161,39 @@ header{
 }
 /* zajętość zapisu */
 
+.myNav
+{ 	
+
+	z-index: 1000;
+}
+
+.sticky {
+    width: 700px;
+    position: fixed;
+    top: -20px;
+    padding: 0px 64px;
+}
+
+@media (max-width: 698px){
+	header {
+		max-width: auto;
+	}
+	.sticky {
+		width: 100%;
+	}
+}
+
+@media (max-width: 572px){
+
+	.sticky {
+		padding: 0px 0px;
+	}
+}
+
 @media (max-width: 490px){
+	.sticky {
+		top: -10px;
+	}
 	h2{
 		width: 300px;
     	margin: 0 auto;
@@ -180,6 +212,7 @@ header{
 	.option {
 		margin-top: 17px;
 	}
+}
 
 @media (max-width: 390px){
 	h2{
@@ -191,6 +224,6 @@ header{
 		flex-direction: column;
 	}
 	.option {
-		margin-top: 0px;
+		margin-top: -1px;
 	}
 }
