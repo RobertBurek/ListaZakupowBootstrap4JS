@@ -1,6 +1,7 @@
 var productsContainer = document.querySelector('.products-container ul');
 var categoriesContainer = document.querySelector('.family-container ul');
 var saveListProductsForm = document.querySelector('.save-new-product-container form');
+var makeListProductsForm = document.querySelector('.make-new-product-container form');
 var newProductForm = document.querySelector('#addProduct form');
 var upOptionAll = document.querySelectorAll('.up button');
 var divUp = document.querySelector('.up');
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', function() {
     addProductToList();
 
     saveListProducts();
+    makeListProducts();
 
     // rozwijany header 
     upOptionList();
