@@ -3,6 +3,7 @@ var categoriesContainer = document.querySelector('.family-container ul');
 var saveListProductsForm = document.querySelector('.save-new-product-container form');
 var makeListProductsForm = document.querySelector('.make-new-product-container form');
 var newProductForm = document.querySelector('#addProduct form');
+var newCategoryForm = document.querySelector('#addCategory form');
 var upOptionAll = document.querySelectorAll('.up button');
 var divUp = document.querySelector('.up');
 var downOptionAll = document.querySelectorAll('.down button');
@@ -21,6 +22,7 @@ document.addEventListener('DOMContentLoaded', function() {
     showCategories();
 
     addProductToList();
+    addCategoryToList();
 
     saveListProducts();
     makeListProducts();

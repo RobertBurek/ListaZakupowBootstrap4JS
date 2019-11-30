@@ -20,7 +20,7 @@ function addNewCategory(category, index){
         showProducts();
     });
 
-    // right click
+    // right click category
     selectCategory.addEventListener('contextmenu', function(event) {
         event.preventDefault();
        console.log("right click w " + categories[index][0]);
@@ -90,7 +90,7 @@ function addNewCategory(category, index){
 
     // Add product to DOM
     // categoriesContainer.prepend(category_Li);
-    categoriesContainer.appendChild(category_Li);
+    if (category[0]!="") categoriesContainer.appendChild(category_Li);
     // console.log(categoriesContainer);
 };
 
@@ -99,3 +99,19 @@ function addNewCategory(category, index){
 //     return  '<a href="#" value="' + index + '">' + category[1] + '</a>';
 // }
 
+function addCategoryToList(){
+    newCategoryForm.addEventListener('submit',function(event){
+        event.preventDefault();
+        var nameCategory = this.querySelector('input').value;
+        if (nameCategory){
+            var newCategory = [nameCategory, nameCategory];
+            categories.push(["Wszystkie","Wszystkie"]);
+            categories[categories.length-2]=newCategory;
+            showCategories();
+            this.querySelector('input').value="";
+            categoryName=nameCategory;
+            h2.innerHTML='Lista zakupów, kategoria : ' + categoryName;
+            showProducts();
+        };
+    });
+}
