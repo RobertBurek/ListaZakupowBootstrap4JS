@@ -2,6 +2,7 @@
 <html lang="pl">
 <head>
 	<meta charset="UTF-8">
+	<meta http-equiv="pragma" content="no-cache">
 	<title>Zakupy</title>
 	<link rel="shortcut icon" href="#" />
 	
@@ -14,12 +15,28 @@
 	<script src="js/modules/startParams.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-	<meta http-equiv="pragma" content="no-cache">
+	<!-- <meta http-equiv="pragma" content="no-cache"> -->
 
 
 </head>
 <body>
 <header>
+		<div class="up">
+				<span class="group">
+					<button class="btn btn-xs up-left" type="submit" id=""><i class="fa fa-angle-double-up"></i></button>
+				</span>
+				<span class="group">
+					<button class="btn btn-xs up-right" type="submit" id=""><i class="fa fa-angle-double-up"></i></button>
+				</span>
+		</div>
+		<div class="down">
+				<span class="group">
+					<button class="btn btn-xs down-left" type="submit" id=""><i class="fa fa-angle-double-down"></i></button>
+				</span>
+				<span class="group">
+					<button class="btn btn-xs down-right" type="submit" id=""><i class="fa fa-angle-double-down"></i></button>
+				</span>
+		</div>
 		<h2 class="text-center">Lista zakupów, kategoria : Wszystkie</h2>
 		<div class="myNav">
 			<div class="group-section">
@@ -58,14 +75,6 @@
 			</div>
 		</div>
 		<div class="input-group">
-			<div class="option down">
-				<span class="group">
-					<button class="btn btn-xs" type="submit" id=""><i class="fa fa-angle-double-down"></i></button>
-				</span>
-				<span class="group">
-					<button class="btn btn-xs" type="submit" id=""><i class="fa fa-angle-double-down"></i></button>
-				</span>
-			</div>
 			<div class="setting input-group">
 				<section class="new-product-container" id="addCategory">
 						<form>
@@ -94,14 +103,6 @@
 					 to najpierw wybierz z listy daną kategorię a następnie dodaj produkt. 
 				</p>
 			</div>
-			<div class="option up">
-				<span class="group">
-					<button class="btn btn-xs" type="submit" id=""><i class="fa fa-angle-double-up"></i></button>
-				</span>
-				<span class="group">
-					<button class="btn btn-xs" type="submit" id=""><i class="fa fa-angle-double-up"></i></button>
-				</span>
-			</div>
 		</div>
 </header>
 
@@ -123,22 +124,5 @@
    <script src="js/modules/new-categories.js"></script>
    <script src="js/modules/list-categories.js"></script>
 
-	<script>
-		$(document).ready(function() {
-			var NavY = $('.myNav').offset().top;
-			var stickyNav = function(){
-				var ScrollY = $(window).scrollTop();	  
-				if (ScrollY > NavY) { 
-					$('.myNav').addClass('sticky');
-				} else {
-					$('.myNav').removeClass('sticky'); 
-				}
-			};
-			stickyNav();
-			$(window).scroll(function() {
-				stickyNav();
-			});
-		});
-	</script>
 </body>
 </html>

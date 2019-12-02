@@ -15,6 +15,24 @@ var h2 = document.querySelector('h2');
 
 document.addEventListener('DOMContentLoaded', function() {
 
+    $(document).ready(function() {
+        var NavY = $('.myNav').offset().top;
+        var stickyNav = function(){
+            var ScrollY = $(window).scrollTop();	  
+            if (ScrollY > NavY) { 
+                $('.myNav').addClass('sticky');
+                // upOptionList();
+                // console.log("teraz"+$(window).scrollTop());
+            } else {
+                $('.myNav').removeClass('sticky'); 
+            }
+        };
+        stickyNav();
+        $(window).scroll(function() {
+            stickyNav();
+        });
+    });
+
     // Show products
     showProducts();
 
@@ -39,20 +57,32 @@ document.addEventListener('DOMContentLoaded', function() {
 
     h2.innerHTML='Lista zakupów, kategoria : ' + categoryName;
     if (optionView) {
-        divDown.style.display="none";
-        headerStyle.style.height="305px";
+        divDown.classList.add("hidden");
+        divUp.classList.remove("hidden");
+        headerStyle.classList.add("optionYes");
+        headerStyle.classList.remove("optionNo");
+        // headerStyle.style.height="305px";
         settingStyle.style.display="flex";
-        divUp.style.display="flex";
+        // divUp.style.display="flex";
+
+        // divDown.style.display="none";
+        // divUp.classList.add("hidden");
+        // headerStyle.style.height="305px";
+        // settingStyle.style.display="flex";
+        // divUp.style.display="flex";
     }
 });
 
 function upOptionList(){
     [].forEach.call(upOptionAll, function(upOption) {
         upOption.addEventListener('click', function(event) { 
-        divUp.style.display="none";
-        headerStyle.style.height="160px";
+        divUp.classList.add("hidden");
+        divDown.classList.remove("hidden");
+        // headerStyle.className.height="160px";
+        headerStyle.classList.add("optionNo");
+        headerStyle.classList.remove("optionYes");
         settingStyle.style.display="none";
-        divDown.style.display="flex";
+        // divDown.style.display="flex";
       })
     })
 };
@@ -60,8 +90,11 @@ function upOptionList(){
 function downOptionList(){
     [].forEach.call(downOptionAll, function(downOption) {
         downOption.addEventListener('click', function(event) { 
-        divDown.style.display="none";
-        headerStyle.style.height="305px";
+        divDown.classList.add("hidden");
+        divUp.classList.remove("hidden");
+        headerStyle.classList.add("optionYes");
+        headerStyle.classList.remove("optionNo");
+        // headerStyle.style.height="305px";
         settingStyle.style.display="flex";
         divUp.style.display="flex";
       })
