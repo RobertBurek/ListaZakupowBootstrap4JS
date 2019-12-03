@@ -146,7 +146,7 @@ function addProductToList(){
 }
 
 function saveListProducts(){
-    saveListProductsForm.addEventListener('submit',function(event){
+    saveListProductsForm.addEventListener('submit',function(){
         // event.preventDefault();
         var buttonFrom = document.querySelector('#saving');
         buttonFrom.classList.add('element-is-busy');
