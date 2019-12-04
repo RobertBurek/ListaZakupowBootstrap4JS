@@ -167,7 +167,7 @@ function saveList(){
     inputFromListCategories.setAttribute("value",categories.length);
     saveListProductsForm.appendChild(inputFromListCategories);
     
-    products.sort();
+    products.sort((a,b) => a[0].localeCompare(b[0]));
     products.forEach((product,index)=>{
         var nameProductsList = document.createElement('input');
         nameProductsList.setAttribute("type","hidden");
@@ -176,7 +176,7 @@ function saveList(){
         if (product[0].length>0) saveListProductsForm.appendChild(nameProductsList);
     });
 
-    categories.sort();
+    categories.sort((a,b) => a[0].localeCompare(b[0]));
     categories.forEach((category,index)=>{
         var nameCategoriesList = document.createElement('input');
         nameCategoriesList.setAttribute("type","hidden");
