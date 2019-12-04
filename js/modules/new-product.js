@@ -134,6 +134,7 @@ function addProductToList(){
         event.preventDefault();
         var nameProduct = this.querySelector('input').value;
         if (nameProduct){
+            nameProduct=trim(nameProduct);
             var newProduct = [nameProduct, 1, 'btn-success', categoryName];
             products.push(newProduct);
             addNewProduct(newProduct,products.length-1);

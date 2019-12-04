@@ -104,6 +104,7 @@ function addCategoryToList(){
         event.preventDefault();
         var nameCategory = this.querySelector('input').value;
         if (nameCategory){
+            nameCategory=trim(nameCategory);
             var newCategory = [nameCategory, nameCategory];
             categories.push(["Wszystkie","Wszystkie"]);
             categories[categories.length-2]=newCategory;

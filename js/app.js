@@ -100,3 +100,13 @@ function downOptionList(){
       })
     })
 };
+
+function trim(text){
+    temp = "";
+    while(text.indexOf(" ")==0){
+        for (j=1;j<text.length;j++) temp += text[j];
+        text = temp;
+        temp = "";
+    }
+    return text;
+};
