@@ -1,4 +1,4 @@
-var categories = [
+﻿var categories = [
 ['Art. mączne','Art._mączne'],
 ['Mięso','Mięso'],
 ['Mrożonki','Mrożonki'],

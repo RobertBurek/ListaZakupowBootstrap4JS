@@ -100,7 +100,8 @@ function addNewProduct(product, index){
     });
 
     // Add product to DOM
-    productsContainer.prepend(product_Li);
+    // productsContainer.prepend(product_Li);
+    if (product[0]!="") productsContainer.appendChild(product_Li);
 };
 
 
@@ -132,13 +133,9 @@ function addProductToList(){
     newProductForm.addEventListener('submit',function(event){
         event.preventDefault();
         var nameProduct = this.querySelector('input').value;
-        // console.log(nameProduct);
         if (nameProduct){
             var newProduct = [nameProduct, 1, 'btn-success', categoryName];
-            // console.log(newProduct);
-            // products.unshift(newProduct);
             products.push(newProduct);
-            // console.log(products);
             addNewProduct(newProduct,products.length-1);
             this.querySelector('input').value="";
         };
@@ -158,17 +155,32 @@ function saveListProducts(){
 function saveList(){
     var inputFromListProducts = document.createElement('input');
     inputFromListProducts.setAttribute("type","hidden");
-    inputFromListProducts.setAttribute("name","liniaLengh");
+    inputFromListProducts.setAttribute("name","lineLenghProduct");
     inputFromListProducts.setAttribute("value",products.length);
     saveListProductsForm.appendChild(inputFromListProducts);
+
+    categories.splice(categories.length-1, 1);
+    var inputFromListCategories = document.createElement('input');
+    inputFromListCategories.setAttribute("type","hidden");
+    inputFromListCategories.setAttribute("name","lineLenghCategory");
+    inputFromListCategories.setAttribute("value",categories.length);
+    saveListProductsForm.appendChild(inputFromListCategories);
+    
+    products.sort();
     products.forEach((product,index)=>{
         var nameProductsList = document.createElement('input');
         nameProductsList.setAttribute("type","hidden");
-        nameProductsList.setAttribute("name","linia"+index);
-        // console.log(product);
+        nameProductsList.setAttribute("name","lineProduct"+index);
         nameProductsList.setAttribute("value","['"+product[0]+"',"+product[1]+",'"+product[2]+"','"+product[3]+"']");
-        // console.log(nameProductsList);
         if (product[0].length>0) saveListProductsForm.appendChild(nameProductsList);
     });
-    // console.log(saveListProductsForm);
+
+    categories.sort();
+    categories.forEach((category,index)=>{
+        var nameCategoriesList = document.createElement('input');
+        nameCategoriesList.setAttribute("type","hidden");
+        nameCategoriesList.setAttribute("name","lineCategory"+index);
+        nameCategoriesList.setAttribute("value","['"+category[0]+"','"+category[1]+"']");
+        if (category[0].length>0) saveListProductsForm.appendChild(nameCategoriesList);
+    });
 }
