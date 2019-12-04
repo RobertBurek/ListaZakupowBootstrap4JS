@@ -108,5 +108,6 @@ function trim(text){
         text = temp;
         temp = "";
     }
+    text=text.toUpperCase().charAt(0)+text.substr(1, text.length);
     return text;
 };
