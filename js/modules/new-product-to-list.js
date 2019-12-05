@@ -20,7 +20,8 @@ function addNewProductToList(product, index){
         // saveList();
     })
 
-    productsContainer.prepend(product_Li);
+    // productsContainer.prepend(product_Li);
+    productsContainer.appendChild(product_Li);
 };
 
     function prepareListProductHTML(product, index){
