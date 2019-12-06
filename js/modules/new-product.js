@@ -154,6 +154,31 @@ function saveListProducts(){
 }
 
 function saveList(){
+
+    var inputStartParamsCategoryName = document.createElement('input');
+    inputStartParamsCategoryName.setAttribute("type","hidden");
+    inputStartParamsCategoryName.setAttribute("name","categoryName");
+    inputStartParamsCategoryName.setAttribute("value",categoryName);
+    saveListProductsForm.appendChild(inputStartParamsCategoryName);
+
+    var inputStartParamsOptionView = document.createElement('input');
+    inputStartParamsOptionView.setAttribute("type","hidden");
+    inputStartParamsOptionView.setAttribute("name","optionView");
+    inputStartParamsOptionView.setAttribute("value",optionView);
+    saveListProductsForm.appendChild(inputStartParamsOptionView);
+
+    var inputStartParamsShoppingList = document.createElement('input');
+    inputStartParamsShoppingList.setAttribute("type","hidden");
+    inputStartParamsShoppingList.setAttribute("name","shoppingList");
+    inputStartParamsShoppingList.setAttribute("value",shoppingList);
+    saveListProductsForm.appendChild(inputStartParamsShoppingList);
+
+    var inputStartParamsPosition = document.createElement('input');
+    inputStartParamsPosition.setAttribute("type","hidden");
+    inputStartParamsPosition.setAttribute("name","position");
+    inputStartParamsPosition.setAttribute("value",position);
+    saveListProductsForm.appendChild(inputStartParamsPosition);
+
     var inputFromListProducts = document.createElement('input');
     inputFromListProducts.setAttribute("type","hidden");
     inputFromListProducts.setAttribute("name","lineLenghProduct");

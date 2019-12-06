@@ -2,6 +2,16 @@
 
 $nazwapliku="index.html";
 
+$daneCategoryName = "var categoryName = '".$_POST["categoryName"]."';\n";
+$daneOptionView = "var optionView = ".$_POST["optionView"].";\n";
+$daneShoppingList = "var shoppingList = ".$_POST["shoppingList"].";\n";
+$danePosition = "var position = '".$_POST["position"]."';";
+$daneStartParams=$daneCategoryName.$daneOptionView.$daneShoppingList.$danePosition;
+
+$fp = fopen("js/modules/startParams.js", "w");
+fputs($fp, $daneStartParams);
+fclose($fp);
+
 $daneProduct = "var products = [\n";
 $lineLenghProduct = (int) $_POST["lineLenghProduct"];
 for($i=0;$i<$lineLenghProduct;$i++){

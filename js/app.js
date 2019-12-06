@@ -15,6 +15,8 @@ var h2 = document.querySelector('h2');
 
 document.addEventListener('DOMContentLoaded', function() {
 
+    position = "#add333";
+
     $(document).ready(function() {
         var NavY = $('.myNav').offset().top;
         var stickyNav = function(){
@@ -83,6 +85,7 @@ function upOptionList(){
         headerStyle.classList.remove("optionYes");
         settingStyle.style.display="none";
         // divDown.style.display="flex";
+        optionView = false;
       })
     })
 };
@@ -97,6 +100,7 @@ function downOptionList(){
         // headerStyle.style.height="305px";
         settingStyle.style.display="flex";
         divUp.style.display="flex";
+        optionView = true;
       })
     })
 };
