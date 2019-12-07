@@ -23,8 +23,6 @@ document.addEventListener('DOMContentLoaded', function() {
             var ScrollY = $(window).scrollTop();	  
             if (ScrollY > NavY) { 
                 $('.myNav').addClass('sticky');
-                // upOptionList();
-                // console.log("teraz"+$(window).scrollTop());
             } else {
                 $('.myNav').removeClass('sticky'); 
             }
@@ -52,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     downOptionList();
 
     // Listener dla elementu 'pozostałe'
+    //wyświetla produkty nie przypisane do katedorii
     // document.querySelector("#other").addEventListener("click",function(event){
     //     event.preventDefault();
     //     showProductsOther();
@@ -63,15 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         divUp.classList.remove("hidden");
         headerStyle.classList.add("optionYes");
         headerStyle.classList.remove("optionNo");
-        // headerStyle.style.height="305px";
         settingStyle.style.display="flex";
-        // divUp.style.display="flex";
-
-        // divDown.style.display="none";
-        // divUp.classList.add("hidden");
-        // headerStyle.style.height="305px";
-        // settingStyle.style.display="flex";
-        // divUp.style.display="flex";
     }
 });
 
@@ -80,11 +71,9 @@ function upOptionList(){
         upOption.addEventListener('click', function(event) { 
         divUp.classList.add("hidden");
         divDown.classList.remove("hidden");
-        // headerStyle.className.height="160px";
         headerStyle.classList.add("optionNo");
         headerStyle.classList.remove("optionYes");
         settingStyle.style.display="none";
-        // divDown.style.display="flex";
         optionView = false;
       })
     })
@@ -97,7 +86,6 @@ function downOptionList(){
         divUp.classList.remove("hidden");
         headerStyle.classList.add("optionYes");
         headerStyle.classList.remove("optionNo");
-        // headerStyle.style.height="305px";
         settingStyle.style.display="flex";
         divUp.style.display="flex";
         optionView = true;

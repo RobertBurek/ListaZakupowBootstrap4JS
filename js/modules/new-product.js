@@ -16,8 +16,6 @@ function addNewProduct(product, index){
         else
             products[index][2]="";
         this.classList.toggle('btn-success');
-        // console.log(products[index][1]);
-        // console.log(this.value,index);
         if (products[index][1]==0) additionButton();
     });
 
@@ -25,10 +23,8 @@ function addNewProduct(product, index){
     var deleteProductBtn = product_Li.querySelector('.delete-product-btn');
     deleteProductBtn.addEventListener('click',function(){
         var liToDelete = this.closest('li');
-        // console.log(liToDelete);
         liToDelete.classList.toggle('hidden');
         products[index][0]="";products[index][1]="";products[index][2]="";
-        // saveList();
     })
 
     // Event - delete product , right click.
@@ -72,13 +68,11 @@ function addNewProduct(product, index){
         var valueThis = document.querySelector('#add'+index);
         var state=parseInt(valueThis.getAttribute('value'));
         if (state < 99) valueThis.setAttribute('value',state+1);
-        // console.log(this.value,index);
         products[index][1]=valueThis.value;
         if (products[index][2]=="") {
         products[index][2]="btn-success";
         selectProductBtn.classList.toggle('btn-success');
         };
-        // saveList();
     };
 
     // Event - reduction
@@ -96,7 +90,6 @@ function addNewProduct(product, index){
         };
         if (state > 0) valueThis.setAttribute('value',state-1);
         products[index][1]=valueThis.value;
-        // saveList();
     });
 
     // Add product to DOM

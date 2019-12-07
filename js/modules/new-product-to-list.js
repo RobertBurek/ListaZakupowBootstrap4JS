@@ -16,8 +16,6 @@ function addNewProductToList(product, index){
         var liToDelete = this.closest('li');
         console.log(liToDelete);
         liToDelete.classList.toggle('hidden');
-        // products[index][0]="";products[index][1]="";products[index][2]="";
-        // saveList();
     })
 
     // productsContainer.prepend(product_Li);

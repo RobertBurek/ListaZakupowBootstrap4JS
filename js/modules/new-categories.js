@@ -36,68 +36,11 @@ function addNewCategory(category, index){
         return false;
     }, false);
 
-
-
-
-    // Event - delete product
-    // var deleteProductBtn = product_Li.querySelector('.delete-product-btn');
-    // deleteProductBtn.addEventListener('click',function(){
-    //     var liToDelete = this.closest('li');
-    //     // console.log(liToDelete);
-    //     liToDelete.classList.toggle('hidden');
-    //     products[index][0]="";products[index][1]="";products[index][2]="";products[index][3]="";
-    //     // saveList();
-    // })
-
-    // Event - addition
-    // var additionBtn = product_Li.querySelector('.plus-product-btn');
-
-
-    // additionBtn.addEventListener('click', function(){
-    //     additionButton();
-    // });
-
-    // function additionButton(){
-    //     var valueThis = document.querySelector('#add'+index);
-    //     var state=parseInt(valueThis.getAttribute('value'));
-    //     if (state < 99) valueThis.setAttribute('value',state+1);
-    //     // console.log(this.value,index);
-    //     products[index][1]=valueThis.value;
-    //     if (products[index][2]=="") {
-    //     products[index][2]="btn-success";
-    //     selectProductBtn.classList.toggle('btn-success');
-    //     };
-    //     // saveList();
-    // };
-
-    // Event - reduction
-    // var reductionBtn = product_Li.querySelector('.minus-product-btn');
-    // reductionBtn.addEventListener('click', function(){
-    //     var valueThis = document.querySelector('#add'+index);
-    //     var state=parseInt(valueThis.getAttribute('value'));
-    //     if ((valueThis.value==1)&&(products[index][2]=="btn-success")){
-    //         products[index][2]="";
-    //         selectProductBtn.classList.toggle('btn-success');
-    //     };
-    //     if ((valueThis.value>1)&&(products[index][2]=="")){
-    //         products[index][2]="btn-success";
-    //         selectProductBtn.classList.toggle('btn-success');
-    //     };
-    //     if (state > 0) valueThis.setAttribute('value',state-1);
-    //     products[index][1]=valueThis.value;
-    //     // saveList();
-    // });
-
     // Add product to DOM
     // categoriesContainer.prepend(category_Li);
     if (category[0]!="") categoriesContainer.appendChild(category_Li);
-    // console.log(categoriesContainer);
 };
 
-
-// function prepareCategoryHTML(category, index){
-//     return  '<a href="#" value="' + index + '">' + category[1] + '</a>';
-// }
 
 function addCategoryToList(){
     newCategoryForm.addEventListener('submit',function(event){
