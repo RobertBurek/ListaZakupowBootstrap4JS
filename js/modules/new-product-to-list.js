@@ -42,5 +42,6 @@ function makeListProducts(){
                 addNewProductToList(product,number);
             }
         });
+        shoppingList = true;
     });
 }

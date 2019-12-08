@@ -6,6 +6,7 @@ function showProducts() {
             if (product[3]==categoryName) addNewProduct(product,number);
         } else addNewProduct(product,number);
     });
+    shoppingList = false;
 }
 
 function showProductsOther() {
