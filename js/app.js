@@ -34,7 +34,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // Show products
-    showProducts();
+    if(shoppingList) {
+        showListProducts();
+    } else {
+        showProducts();}
 
     // Show categories
     showCategories();

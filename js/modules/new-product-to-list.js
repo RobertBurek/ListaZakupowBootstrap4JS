@@ -36,12 +36,16 @@ function addNewProductToList(product, index){
 function makeListProducts(){
     makeListProductsForm.addEventListener('submit',function(event){
         event.preventDefault();
-        productsContainer.innerHTML="";
-        products.forEach((product,number)=>{
-            if (product[2]=="btn-success") {
-                addNewProductToList(product,number);
-            }
-        });
-        shoppingList = true;
+        showListProducts();
     });
+}
+
+function showListProducts(){
+    productsContainer.innerHTML="";
+    products.forEach((product,number)=>{
+        if (product[2]=="btn-success") {
+            addNewProductToList(product,number);
+        }
+    });
+    shoppingList = true;
 }
