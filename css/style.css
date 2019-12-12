@@ -17,6 +17,12 @@ body {
 	align-items: center;
 }
 
+.btn-disabled{
+	background-color: brown;
+	width: 116px;
+	
+}
+
 header{
 	display: flex;
 	flex-direction: column;
