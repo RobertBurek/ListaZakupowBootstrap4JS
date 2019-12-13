@@ -201,6 +201,13 @@ header{
 	.sticky {
 		padding: 0px 0px;
 	}
+	h2{
+		width: 300px;
+		margin: 0 auto;
+	}
+	.setting{
+		width: 460px;
+	}
 }
 
 @media (max-width: 490px){
@@ -209,7 +216,7 @@ header{
 	}
 	h2{
 		width: 300px;
-    	margin: 0 auto;
+		margin: 0 auto;
 	}
 	.group-section {
 		margin-left: auto;
@@ -219,9 +226,24 @@ header{
 	.new-product-container {
 		margin-top: 10px;
 	}
+	.new-product-container button {
+		height: 27px;
+		width: 100px;
+		padding: 0px;
+	}
+	.setting{
+		width: 380px;
+	}
+	.setting p {
+		font-size: 11px;
+		width: 290px;
+	}
 }
 
 @media (max-width: 390px){
+	.btn-disabled{
+		display: none;
+	}
 	header{
 		height: 90px;
 	}
