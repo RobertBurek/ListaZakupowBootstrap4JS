@@ -17,10 +17,24 @@ body {
 	align-items: center;
 }
 
+.option-right{
+	float: right;
+    width: 25%;
+    height: 100%;
+    text-align: center;
+}
+.option-left{
+	width: 50%;
+	height: 100%;
+	margin: 0px auto;
+}
+
 .btn-disabled{
 	background-color: brown;
-	width: 116px;
-	
+	margin-top: 15px;
+	height: 27px;
+    width: 115px;
+    padding: 0px 6px;
 }
 
 header{
@@ -46,13 +60,12 @@ header{
 }
 
 .setting{
-	display: none;
-	/* display: flex; */
-    flex-direction: column;
-    width: 510px;
-    height: 0px;
+	/* display: none; */
+    flex-direction: row;
+    height: 100%;
     margin: 0 auto;
-    margin-top: 22px;
+    margin-top: 20px;
+    justify-content: space-between;
 }
 
 .setting p {
@@ -223,6 +236,20 @@ header{
 		margin-right: auto;
 		margin-top: 10px;
 	}
+	.option-right {
+		height: auto;
+		width: 100%;
+	}
+	.option-left {
+		height: 80%;
+		width: auto;
+	}
+	.btn-disabled {
+		margin-top: 10px;
+		margin-left: 5px;
+		padding: 0px;
+		/* width: 100%; */
+	}
 	.new-product-container {
 		margin-top: 10px;
 	}
@@ -232,18 +259,16 @@ header{
 		padding: 0px;
 	}
 	.setting{
-		width: 380px;
+		width: 100%;
+		flex-direction: column-reverse;
 	}
 	.setting p {
 		font-size: 11px;
-		width: 290px;
+		/* width: 290px; */
 	}
 }
 
 @media (max-width: 390px){
-	.btn-disabled{
-		display: none;
-	}
 	header{
 		height: 90px;
 	}
@@ -261,6 +286,9 @@ header{
 	.group-section button {
 		padding: 0px;
 	}
+	.btn-disabled {
+		height: 22px;
+	}
 }
 
 @media (max-width: 300px){
@@ -268,7 +296,7 @@ header{
 		height: 140px;
 	}
 	.optionYes{
-		height: 305px;
+		height: 320px;
 	}
 	.optionNo {
 		height: 140px;
@@ -283,5 +311,14 @@ header{
 	}
 	.group-section button {
 		margin-top: 2px;
+	}
+	.new-product-container input{
+		width: 100px;
+	}
+	.setting p {
+		width: auto;
+	}
+	.setting{
+		margin-top: 10px;
 	}
 }

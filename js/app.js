@@ -39,6 +39,12 @@ document.addEventListener('DOMContentLoaded', function() {
     } else {
         showProducts();}
 
+    if(optionView) {
+        settingStyle.style.display="flex";
+    } else {
+        settingStyle.style.display="none";
+    }
+
     // Show categories
     showCategories();
 
