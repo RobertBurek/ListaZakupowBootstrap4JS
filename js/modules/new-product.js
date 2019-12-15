@@ -1,3 +1,5 @@
+// let isNew = false;
+
 function addNewProduct(product, index){
     var product_Li = document.createElement('li');
 
@@ -93,8 +95,15 @@ function addNewProduct(product, index){
     });
 
     // Add product to DOM
-    // productsContainer.prepend(product_Li);
-    if (product[0]!="") productsContainer.appendChild(product_Li);
+    // if ((product[0]!="") && (isNew)){ 
+    if (product[0]!="") {
+        // if (isNew) { 
+            // productsContainer.prepend(product_Li);
+            // isNew = false;
+        // }else {
+             productsContainer.appendChild(product_Li);
+        // }
+    }
 };
 
 
@@ -129,8 +138,11 @@ function addProductToList(){
         if (nameProduct){
             nameProduct=trim(nameProduct);
             var newProduct = [nameProduct, 1, 'btn-success', categoryName];
-            products.push(newProduct);
-            addNewProduct(newProduct,products.length-1);
+            products.unshift(newProduct);
+            showProducts();
+            // products.push(newProduct);
+            // isNew = true;
+            // addNewProduct(newProduct,products.length-1);
             this.querySelector('input').value="";
         };
     });
@@ -141,7 +153,7 @@ function saveListProducts(){
         // event.preventDefault();
         var buttonFrom = document.querySelector('#saving');
         buttonFrom.classList.add('element-is-busy');
-        buttonFrom.disabled = true;    
+        buttonFrom.disabled = true;
         saveList();
     });
 }
