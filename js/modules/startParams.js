@@ -1,4 +1,4 @@
 var categoryName = "Wszystkie";
 var optionView = false;
-var shoppingList = true;
+var shoppingList = false;
 var position = "#add12";

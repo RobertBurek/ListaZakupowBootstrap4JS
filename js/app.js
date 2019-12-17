@@ -11,6 +11,7 @@ var divDown = document.querySelector('.down');
 var headerStyle = document.querySelector('header');
 var settingStyle = document.querySelector('.setting');
 var h2 = document.querySelector('h2');
+var swapAll = document.querySelectorAll('.btn--swap');
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -53,6 +54,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
     saveListProducts();
     makeListProducts();
+
+
+    [].forEach.call(swapAll, function(swap) {
+        swap.style.add
+        swap.addEventListener('mouseover', () => {
+            swap.disabled = true;
+            setTimeout( () => {
+                swap.disabled = false;
+            }, 2500 );
+        });
+    });
 
     // rozwijany header 
     upOptionList();

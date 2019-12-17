@@ -29,13 +29,13 @@ body {
 	margin: 0px auto;
 }
 
-.btn-disabled{
+/* .btn-disabled{
 	background-color: brown;
 	margin-top: 15px;
 	height: 27px;
     width: 115px;
     padding: 0px 6px;
-}
+} */
 
 header{
 	display: flex;
@@ -327,6 +327,11 @@ header{
 .btn--swap {
 	position: relative;
 	outline: none;
+	background-color: rgb(200, 98, 98);
+	margin-top: 15px;
+	height: 27px;
+    width: 115px;
+    padding: 0px 6px;
 }
 
 .btn--swap span {
@@ -339,7 +344,7 @@ header{
 	opacity: 0;
 	color:white;
 	font-weight: bolder;
-	transition: 4s ease;
+	transition: 2.5s ease;
 }
 
 .btn--swap::before {
@@ -349,8 +354,8 @@ header{
 	position: absolute;
 	width: 0;
 	height: 100%;
-	background-color: red;
-	transition: 4s ease;
+	background-color: brown;
+	transition: 2.5s ease;
 }
 
 .btn--swap:hover:before {

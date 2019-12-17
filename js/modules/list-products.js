@@ -17,6 +17,6 @@ function showProductsOther() {
 }
 
 // Delete product
-function deletedProduct(product){
+function deletedProduct(product) {
     product.classList.toggle('btn-success');
 }
