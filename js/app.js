@@ -12,6 +12,7 @@ var headerStyle = document.querySelector('header');
 var settingStyle = document.querySelector('.setting');
 var h2 = document.querySelector('h2');
 var swapAll = document.querySelectorAll('.btn--swap');
+var cleanList = document.querySelector('#cleanList');
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -65,6 +66,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 2500 );
         });
     });
+
+    // czyszczenie listy zakupów
+    cleanListProducts();    
 
     // rozwijany header 
     upOptionList();

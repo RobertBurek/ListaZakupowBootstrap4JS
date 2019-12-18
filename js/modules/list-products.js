@@ -20,3 +20,12 @@ function showProductsOther() {
 function deletedProduct(product) {
     product.classList.toggle('btn-success');
 }
+
+//Clean list product
+function cleanListProducts() {
+    cleanList.addEventListener('click',(event) => {
+        event.preventDefault();
+        products.forEach((product) => product[2]="");
+        showProducts();
+    });
+}
