@@ -1,5 +1,5 @@
 function showCategories() {
-    categoriesContainer.innerHTML="";
+    categoriesContainer.innerHTML = "";
     categories.forEach((category,number)=>{
         addNewCategory(category,number);
     });

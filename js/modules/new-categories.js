@@ -2,9 +2,9 @@ function addNewCategory(category, index){
 
     var category_Li = document.createElement('li');
 
-    category_Li.innerHTML='<a href="#" value="' + index + '">' + category[0] + '</a>';
+    category_Li.innerHTML = '<a href="#" value="' + index + '">' + category[0] + '</a>';
     if (index==categories.length-1) 
-        category_Li.innerHTML='<a href="#" style="font-weight: bold;" value="' + index + '">' + category[0] + '</a>';
+        category_Li.innerHTML = '<a href="#" style="font-weight: bold;" value="' + index + '">' + category[0] + '</a>';
 
 
     // Event - select category
@@ -12,10 +12,10 @@ function addNewCategory(category, index){
     selectCategory.addEventListener('click', function(event){
         event.preventDefault();
         categoryName = categories[index][0];
-        h2.innerHTML='Lista zakupów, kategoria : ' + categoryName;
+        h2.innerHTML = textH2 + categoryName;
         if (event.target.style.color=="red") {
-            event.target.style.color="";
-            event.target.style.fontWeight="";
+            event.target.style.color = "";
+            event.target.style.fontWeight = "";
        }
         showProducts();
     });
@@ -28,10 +28,10 @@ function addNewCategory(category, index){
        if (event.target.style.color=="red") {
             var liToDelete = this.closest('li');
             liToDelete.classList.toggle('hidden');
-           categories[index]=["",""];
+           categories[index] = ["",""];
        }
-       event.target.style.color="red";
-       event.target.style.fontWeight="bold";
+       event.target.style.color = "red";
+       event.target.style.fontWeight = "bold";
         console.log(event.target.style);
         return false;
     }, false);
@@ -52,8 +52,8 @@ function addCategoryToList(){
             categories.unshift(newCategory);
             showCategories();
             this.querySelector('input').value="";
-            categoryName=nameCategory;
-            h2.innerHTML='Lista zakupów, kategoria : ' + categoryName;
+            categoryName = nameCategory;
+            h2.innerHTML = textH2 + categoryName;
             showProducts();
         };
     });

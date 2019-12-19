@@ -11,6 +11,7 @@ var divDown = document.querySelector('.down');
 var headerStyle = document.querySelector('header');
 var settingStyle = document.querySelector('.setting');
 var h2 = document.querySelector('h2');
+let textH2 = 'Lista towarów, kategoria: ';
 var swapAll = document.querySelectorAll('.btn--swap');
 var cleanList = document.querySelector('#cleanList');
 
@@ -81,13 +82,13 @@ document.addEventListener('DOMContentLoaded', function() {
     //     showProductsOther();
     // });
 
-    h2.innerHTML='Lista zakupów, kategoria : ' + categoryName;
+    h2.innerHTML = textH2 + categoryName;
     if (optionView) {
         divDown.classList.add("hidden");
         divUp.classList.remove("hidden");
         headerStyle.classList.add("optionYes");
         headerStyle.classList.remove("optionNo");
-        settingStyle.style.display="flex";
+        settingStyle.style.display = "flex";
     }
 });
 
@@ -98,7 +99,7 @@ function upOptionList(){
         divDown.classList.remove("hidden");
         headerStyle.classList.add("optionNo");
         headerStyle.classList.remove("optionYes");
-        settingStyle.style.display="none";
+        settingStyle.style.display = "none";
         optionView = false;
       })
     })
@@ -111,8 +112,8 @@ function downOptionList(){
         divUp.classList.remove("hidden");
         headerStyle.classList.add("optionYes");
         headerStyle.classList.remove("optionNo");
-        settingStyle.style.display="flex";
-        divUp.style.display="flex";
+        settingStyle.style.display = "flex";
+        divUp.style.display = "flex";
         optionView = true;
       })
     })
@@ -121,10 +122,10 @@ function downOptionList(){
 function trim(text){
     temp = "";
     while(text.indexOf(" ")==0){
-        for (j=1;j<text.length;j++) temp += text[j];
+        for (j=1; j<text.length; j++) temp += text[j];
         text = temp;
         temp = "";
     }
-    text=text.toUpperCase().charAt(0)+text.substr(1, text.length);
+    text = text.toUpperCase().charAt(0) + text.substr(1, text.length);
     return text;
 };

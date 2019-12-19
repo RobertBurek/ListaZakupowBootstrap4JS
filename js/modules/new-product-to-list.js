@@ -4,7 +4,7 @@ function addNewProductToList(product, index){
     product_Li.classList.add('single-product');
     if (product[0]=="") product_Li.classList.add('hidden');
 
-    product_Li.innerHTML=prepareListProductHTML(product, index);
+    product_Li.innerHTML = prepareListProductHTML(product, index);
 
     // // Event - select product
     // var selectProductBtn = product_Li.querySelector('.select-product-btn');

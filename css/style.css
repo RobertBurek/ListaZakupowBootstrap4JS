@@ -210,6 +210,7 @@ header{
 	}
 }
 
+/* responzywność */
 @media (max-width: 572px){
 	.sticky {
 		padding: 0px 0px;
