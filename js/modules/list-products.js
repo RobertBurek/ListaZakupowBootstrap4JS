@@ -29,3 +29,16 @@ function cleanListProducts() {
         showProducts();
     });
 }
+
+//Clean wszystkie dane w app
+function cleanAllApp() {
+    cleanAll.addEventListener('click',(event) => {
+        event.preventDefault();
+        products = [];
+        categories = [];
+        categoryName = " ";
+        h2.innerHTML = textH2 + categoryName;
+        showProducts();
+        showCategories();
+    });
+}

@@ -14,6 +14,7 @@ var h2 = document.querySelector('h2');
 let textH2 = 'Lista towarów, kategoria: ';
 var swapAll = document.querySelectorAll('.btn--swap');
 var cleanList = document.querySelector('#cleanList');
+var cleanAll = document.querySelector('#cleanAll');
 
 
 document.addEventListener('DOMContentLoaded', function() {
@@ -69,7 +70,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // czyszczenie listy zakupów
-    cleanListProducts();    
+    cleanListProducts();
+
+    // czyszczenie wszystkich danych w app
+    cleanAllApp();
 
     // rozwijany header 
     upOptionList();
