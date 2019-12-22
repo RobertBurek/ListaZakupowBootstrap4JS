@@ -1,12 +1,13 @@
 // Show product
 function showProducts() {
+    textH2 = "Lista towarów, kategoria: ";
     productsContainer.innerHTML = "";
     products.forEach((product,number)=>{
         if (categoryName!="Wszystkie") {
             if (product[3]==categoryName) addNewProduct(product,number);
         } else addNewProduct(product,number);
     });
-    // shoppingList = false;
+    shoppingList = false;
 }
 
 function showProductsOther() {

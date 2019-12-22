@@ -1,30 +1,32 @@
-var productsContainer = document.querySelector('.products-container ul');
-var categoriesContainer = document.querySelector('.family-container ul');
-var saveListProductsForm = document.querySelector('.save-new-product-container form');
-var makeListProductsForm = document.querySelector('.make-new-product-container form');
-var newProductForm = document.querySelector('#addProduct form');
-var newCategoryForm = document.querySelector('#addCategory form');
-var upOptionAll = document.querySelectorAll('.up button');
-var divUp = document.querySelector('.up');
-var downOptionAll = document.querySelectorAll('.down button');
-var divDown = document.querySelector('.down');
-var headerStyle = document.querySelector('header');
-var settingStyle = document.querySelector('.setting');
-var h2 = document.querySelector('h2');
+let productsContainer = document.querySelector('.products-container ul');
+let categoriesContainer = document.querySelector('.family-container ul');
+let saveListProductsForm = document.querySelector('.save-new-product-container form');
+let makeListProductsForm = document.querySelector('.make-new-product-container form');
+let newProductForm = document.querySelector('#addProduct form');
+let newCategoryForm = document.querySelector('#addCategory form');
+let upOptionAll = document.querySelectorAll('.up button');
+let divUp = document.querySelector('.up');
+let downOptionAll = document.querySelectorAll('.down button');
+let divDown = document.querySelector('.down');
+let headerStyle = document.querySelector('header');
+let settingStyle = document.querySelector('.setting');
+let h2 = document.querySelector('h2');
 let textH2 = 'Lista towarów, kategoria: ';
-var swapAll = document.querySelectorAll('.btn--swap');
-var cleanList = document.querySelector('#cleanList');
-var cleanAll = document.querySelector('#cleanAll');
+let swapAll = document.querySelectorAll('.btn--swap');
+let cleanList = document.querySelector('#cleanList');
+let cleanAll = document.querySelector('#cleanAll');
+let buttonListhopping = document.querySelector('#making');
 
 
 document.addEventListener('DOMContentLoaded', function() {
 
     position = "#add333";
 
+    // runnig nav
     $(document).ready(function() {
-        var NavY = $('.myNav').offset().top;
-        var stickyNav = function(){
-            var ScrollY = $(window).scrollTop();	  
+        let NavY = $('.myNav').offset().top;
+        let stickyNav = function(){
+            let ScrollY = $(window).scrollTop();	  
             if (ScrollY > NavY) { 
                 $('.myNav').addClass('sticky');
             } else {
@@ -40,8 +42,18 @@ document.addEventListener('DOMContentLoaded', function() {
     // Show products
     if(shoppingList) {
         showListProducts();
+        textH2="Lista zakupów";
+            if (categoryName=="Wszystkie"){
+                textH2="Lista zakupów";
+                h2.innerHTML = textH2;
+                document.querySelector('#making').innerHTML="Powrót do tworzenia listy";
+            } else {
+                textH2="Lista zakupów, kategria: ";
+                h2.innerHTML = textH2 + categoryName;
+            }
     } else {
-        showProducts();}
+        showProducts();
+    }
 
     if(optionView) {
         settingStyle.style.display="flex";
@@ -60,7 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     [].forEach.call(swapAll, function(swap) {
-        swap.style.add
         swap.addEventListener('mouseover', () => {
             swap.disabled = true;
             setTimeout( () => {

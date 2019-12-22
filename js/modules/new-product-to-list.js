@@ -35,8 +35,22 @@ function addNewProductToList(product, index){
 
 function makeListProducts(){
     makeListProductsForm.addEventListener('submit',function(event){
+        console.log(shoppingList);
         event.preventDefault();
-        showListProducts();
+        if (!shoppingList) {
+            console.log("lista zakupów")
+            showListProducts();
+            buttonListhopping.innerHTML="Powrót do tworzenia listy";
+            console.log(shoppingList);
+        } else{
+            console.log("lista towarów")
+            showProducts();
+            buttonListhopping.innerHTML="Pokaż listę zakupów";
+            textH2="Lista towarów, kategria: ";
+            h2.innerHTML = textH2 + categoryName;
+            // shoppingList="false";
+            console.log(shoppingList);
+        }
     });
 }
 
@@ -47,6 +61,13 @@ function showListProducts(){
             addNewProductToList(product,number);
         }
     });
+    if (categoryName=="Wszystkie"){
+        textH2="Lista zakupów";
+        h2.innerHTML = textH2;
+    } else {
+        textH2="Lista zakupów, kategria: ";
+        h2.innerHTML = textH2 + categoryName;
+    }
     shoppingList = true;
 }
 
