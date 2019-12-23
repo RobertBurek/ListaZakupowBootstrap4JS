@@ -14,8 +14,8 @@ function addNewProductToList(product, index){
     var deleteProductBtn = product_Li.querySelector('.delete-product-btn');
     deleteProductBtn.addEventListener('click',function(){
         var liToDelete = this.closest('li');
-        console.log(liToDelete);
         liToDelete.classList.toggle('hidden');
+        products[index][2]="";
     })
 
     // productsContainer.prepend(product_Li);

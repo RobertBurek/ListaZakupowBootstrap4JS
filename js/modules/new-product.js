@@ -10,8 +10,6 @@ function addNewProduct(product, index){
 
     // Event - select product
     var selectProductBtn = product_Li.querySelector('.select-product-btn');
-
-
     selectProductBtn.addEventListener('click', function(){
         if (products[index][2]=="") 
             products[index][2] = "btn-success";

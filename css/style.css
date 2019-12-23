@@ -17,6 +17,22 @@ body {
 	align-items: center;
 }
 
+/* @import url('https://fonts.googleapis.com/css?family=Sacramento&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css?family=Great+Vibes&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css?family=Allura&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css?family=Pinyon+Script&display=swap'); */
+
+.form-control{
+	/* font-family: 'Sacramento', cursive; */
+	/* font-family: 'Great Vibes', cursive; */
+	font-family: 'Allura', cursive;
+	/* font-family: 'Pinyon Script', cursive; */
+	font-family: 'Allura', cursive;
+
+	font-size: 180%;
+	font-stretch: expanded;
+}
+
 .option-right{
 	float: right;
     width: 25%;
