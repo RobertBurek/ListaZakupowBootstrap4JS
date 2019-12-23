@@ -23,9 +23,10 @@ function addNewProductToList(product, index){
 };
 
     function prepareListProductHTML(product, index){
-        return  '<div class="input-group" style="display:flex;width: 80%;">' +
-                '	<input type="text" class="form-control" id="name' + index + '" placeholder="Nazwa produktu..." value="' + product[0] + '" disabled>' +
-                '	<input style="width: 60px;"type="text" class="form-control" id="add' + index + '" placeholder="0" value="' + product[1] + '" disabled>' +
+        return  '<div class="input-group" style="display:flex;width: 88%;">' +
+                '	<input style="width: 300px;" type="text" class="form-control form-list" id="name' + index + '" placeholder="Nazwa produktu..." value="' + product[0] + '" disabled>' +
+                '	<input style="width: 30px; padding-left: 0px; padding-right: 0px; text-align: center;" type="text" class="form-control form-list" id="add' + index + '" placeholder="0" value="' + product[1] + '" disabled>' +
+                '	<input style="width: 50px; padding-left: 0px; padding-right: 20px;;" type="text" class="form-control form-list" id="add' + index + '" placeholder="0" value="szt." disabled>' +
                 '	<span class="input-group-btn">' +
                 '		<button class="btn btn-danger delete-product-btn" value="' + index + '"><i class="fa fa-times"></i></button>' +
                 '	</span>' +
